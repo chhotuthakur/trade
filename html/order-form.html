@@ -1,0 +1,401 @@
+<style>
+    #price_li{
+        display: none;
+    }
+    #limit_order_buttons{
+        display: none;
+    }
+</style>
+<div class="market_order_modal">
+    <div class="market_order_header">
+        <button type="button" class="times"><i class="fas fa-times" onclick="market_watch();"></i></button>
+        <h4 class="title" id="order_form_scrip_id"></h4>
+        <div class="tab">
+            <button class="tablinks2 active" id="market_order_button" onclick="change_order_type('market_order')">Market</button>
+            <button class="tablinks2" id="limit_order_button" onclick="change_order_type('limit_order')">Order</button>
+        </div>
+    </div>
+    <div class="market_order_middle_cntnt">
+
+        <div class="market_order_tablinks">
+            <div id="market" class="tabcontent2 show">
+                <div class="market_modal_cntnt">
+                    <div id='order_err'></div>
+                    <form id="order_form" name="order_form" action="javascript:void(0);">
+                        <ul>
+                            <li>
+                                <label id="quantity_lot">Lots</label>
+                                <input type="hidden" name="order_type" id="order_type" value="market_order" />
+                                <input type="hidden" name="order_scrip_id" id="order_scrip_id" value="" />
+                                <input type="number" id="lot" name="lot" value="1">
+                            </li>
+                            <li id="price_li">
+                                <label>Price</label>
+                                <input type="number" id="price" name="price">
+                            </li>
+                        </ul>
+                    </form>
+                    <div class="market_btns" id="market_order_buttons">
+                        <button onclick="place_order(1);" class="sell_btn red_bg">
+                            <span class="sell">Sell @</span>
+                            <span class="title" id="order_bid_price"></span>
+                        </button>
+                        <button onclick="place_order(0);" class="sell_btn green_bg">
+                            <span class="sell">Buy @</span>
+                            <span class="title" id="order_ask_price"></span>
+                        </button>
+                    </div>
+                    <div class="market_btns" id="limit_order_buttons">
+                        <button onclick="place_order(1);" class="sell_btn red_bg">
+                            <span class="sell">Place Sell Order</span>
+                        </button>
+                        <button onclick="place_order(0);" class="sell_btn green_bg">
+                            <span class="sell">Place Buy Order</span>
+                        </button>
+                    </div>
+                    <div class="maket_table">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="list_cntnt">
+                                            <p class="id">Bid</p>
+                                            <p class="title" id="order_form_bid"></p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="list_cntnt">
+                                            <p class="id">Ask</p>
+                                            <p class="title" id="order_form_ask"></p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="list_cntnt">
+                                            <p class="id">Last</p>
+                                            <p class="title" id="order_form_ltp"></p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="list_cntnt">
+                                            <p class="id">High</p>
+                                            <p class="title" id="order_form_high"></p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="list_cntnt">
+                                            <p class="id">Low</p>
+                                            <p class="title" id="order_form_low"></p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="list_cntnt">
+                                            <p class="id">Change</p>
+                                            <p class="title" id="order_form_change"></p>
+                                        </div>
+                                    </td>
+                                </tr>
+<!--                                <tr>
+                                    <td>
+                                        <div class="list_cntnt">
+                                            <p class="id">Open</p>
+                                            <p class="title" id="order_form_open">50646</p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="list_cntnt">
+                                            <p class="id">Close</p>
+                                            <p class="title" id="order_form_close">50646</p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="list_cntnt">
+                                            <p class="id">Volume</p>
+                                            <p class="title" id="order_form_volume">50646</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="list_cntnt">
+                                            <p class="id">Buyers</p>
+                                            <p class="title" id="order_form_buyers">50646</p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="list_cntnt">
+                                            <p class="id">Sellers</p>
+                                            <p class="title" id="order_form_sellers">50646</p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="list_cntnt">
+                                            <p class="id">Open Interest</p>
+                                            <p class="title" id="order_form_open_interest">50646</p>
+                                        </div>
+                                    </td>
+                                </tr>-->
+                                <tr>
+                                    <td>
+                                        <div class="list_cntnt">
+                                            <p class="id">Open</p>
+                                            <p class="title" id="order_form_open"></p>
+                                        </div>
+                                    </td>
+                                <td>
+                                        <div class="list_cntnt">
+                                            <p class="id">Volume</p>
+                                            <p class="title" id="order_form_volume"></p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="list_cntnt">
+                                            <p class="id">Last Traded Qty</p>
+                                            <p class="title" id="order_form_ltq"></p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="list_cntnt">
+                                            <p class="id">Atp</p>
+                                            <p class="title" id="order_form_atp"></p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="list_cntnt">
+                                            <p class="id">Lot Size</p>
+                                            <p class="title" id="order_form_lot_size"></p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="list_cntnt">
+                                            <p class="id">Open Interest</p>
+                                            <p class="title" id="order_form_oi"></p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="list_cntnt">
+                                            <p class="id">Bid Qty</p>
+                                            <p class="title" id="order_form_bid_qty"></p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="list_cntnt">
+                                            <p class="id">Ask Qty</p>
+                                            <p class="title" id="order_form_ask_qty"></p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="list_cntnt">
+                                            <p class="id">Prev. Close</p>
+                                            <p class="title" id="order_form_prev_close"></p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="list_cntnt">
+                                            <p class="id">Upper Circuit</p>
+                                            <p class="title" id="order_form_upper_circuit"></p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="list_cntnt">
+                                            <p class="id">Lower Circuit</p>
+                                            <p class="title" id="order_form_lower_circuit"></p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="list_cntnt">
+                                            <p class="id"></p>
+                                            <p class="title"></p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div id="order" class="tabcontent2 show">
+                <div class="market_modal_cntnt">
+                    <form>
+                        <ul>
+                            <li>
+                                <label>Lots</label>
+                                <input type="number" name="lot">
+                            </li>
+                            <li>
+                                <label>Price</label>
+                                <input type="number" name="price">
+                            </li>
+                        </ul>
+                    </form>
+                    <div class="market_btns">
+                        <a href="#" class="sell_btn red_bg">
+                            <span class="sell">Place Sell Order</span>
+                        </a>
+                        <a href="#" class="sell_btn green_bg">
+                            <span class="sell">Place Buy Order</span>
+                        </a>
+                    </div>
+                    <!--<div class="maket_table">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="list_cntnt">
+                                            <p class="id">Bid</p>
+                                            <p class="title">50646</p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="list_cntnt">
+                                            <p class="id">Ask</p>
+                                            <p class="title">50646</p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="list_cntnt">
+                                            <p class="id">Last</p>
+                                            <p class="title">50646</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="list_cntnt">
+                                            <p class="id">High</p>
+                                            <p class="title">50646</p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="list_cntnt">
+                                            <p class="id">Low</p>
+                                            <p class="title">50646</p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="list_cntnt">
+                                            <p class="id">Change</p>
+                                            <p class="title">50646</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="list_cntnt">
+                                            <p class="id">Open</p>
+                                            <p class="title">50646</p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="list_cntnt">
+                                            <p class="id">Close</p>
+                                            <p class="title">50646</p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="list_cntnt">
+                                            <p class="id">Valume</p>
+                                            <p class="title">50646</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="list_cntnt">
+                                            <p class="id">Buyers</p>
+                                            <p class="title">50646</p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="list_cntnt">
+                                            <p class="id">Sellers</p>
+                                            <p class="title">50646</p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="list_cntnt">
+                                            <p class="id">Open Interest</p>
+                                            <p class="title">50646</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="list_cntnt">
+                                            <p class="id">Upper ckt</p>
+                                            <p class="title">50646</p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="list_cntnt">
+                                            <p class="id">Lower ckt</p>
+                                            <p class="title">50646</p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="list_cntnt">
+                                            <p class="id">Atp</p>
+                                            <p class="title">50646</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="list_cntnt">
+                                            <p class="id">Last Buy</p>
+                                            <p class="title">1</p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="list_cntnt">
+                                            <p class="id">Last Sell</p>
+                                            <p class="title">2</p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="list_cntnt">
+                                            <p class="id">Lot Size</p>
+                                            <p class="title">100</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+<!--    <script type="text/javascript">
+        function market_order(evt2, order_mar) {
+            var j, tabcontent2, tablinks2;
+            tabcontent2 = document.getElementsByClassName("tabcontent2");
+            for (j = 0; j < tabcontent2.length; j++) {
+                tabcontent2[j].style.display = "none";
+            }
+            tablinks2 = document.getElementsByClassName("tablinks2");
+            for (j = 0; j < tablinks2.length; j++) {
+                tablinks2[j].className = tablinks2[j].className.replace(" active", "");
+            }
+            document.getElementById(order_mar).style.display = "block";
+            evt2.currentTarget.className += " active";
+        }
+    </script>-->
+</div>
+<!-- start market order modal -->
+<div class="success_msg_modal" id="success_modal">
+	<div class="success_msg_cntnt">
+                <span id="order_image"></span>
+		<h3 class="title" id="order_success_title"></h3>
+		<p class="para" id="order_message"></p>
+		<a href="javascript:void(0);" class="green_bg ok_btn" id="order_modal_action" onclick="order_modal_hide()">OK</a>
+	</div>
+</div>

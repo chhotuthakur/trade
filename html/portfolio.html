@@ -1,0 +1,92 @@
+
+<div class="home_page_main_div">
+	<!-- start header -->
+	<div class="top_header">
+			<div class="header_loction_left">
+				<h2>Portfolio</h2>
+			</div>
+	</div>
+	<!-- end header -->
+	
+	<div class="home_middle_cntnt">
+<!--		<div class="future_btns">
+			<div class="tab">
+			  <button class="tablinks active" onclick="portfolio_fun(event, 'mcx')">Active</button>
+			  <button class="tablinks" onclick="portfolio_fun(event, 'nse')">Closed</button>
+			</div>
+		</div>-->
+		<div class="future_cntnt">
+			<!-- Tab content -->
+			<div id="mxc" class="tabcontent show">
+			  
+				<div class="portfolio_table">
+					<div class="portfolio_table_bg">
+						<table>
+							<tbody>
+								<tr>
+									<td>
+										<div class="portfolio_list">
+											<p class="para">Ledger Balance</p>
+											<p class="title" id="ledger_balance"></p>
+										</div>
+									</td>
+									<td>
+										<div class="portfolio_list">
+											<p class="para">Margin Available</p>
+											<p class="title" id="available_balance"></p>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="portfolio_list">
+											<p class="para">Active P/L</p>
+											<p class="title" id="active_profit_loss"></p>
+										</div>
+									</td>
+									<td>
+										<div class="portfolio_list">
+											<p class="para">M2M</p>
+											<p class="title" id="m2m_balance"></p>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			  <div class="mxc_list portfolio_cntnt table_resonsive">
+			  	<table>
+					  <tbody id="portfolio_list">
+						  
+						  
+						  
+						  
+					  </tbody>
+					</table>
+			  </div>
+
+			</div>
+
+			
+	</div>
+
+<!--	<script type="text/javascript">
+		function portfolio_fun(evt, cityName) {
+  let i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+	</script>-->
+</div>
+
+<div class="last_space" id="last_space"></div>
+<!-- end last space -->

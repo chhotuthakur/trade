@@ -1,0 +1,67 @@
+<style>
+    #price_li{
+        display: none;
+    }
+    #limit_order_buttons{
+        display: none;
+    }
+</style>
+<div class="market_order_modal">
+    <div class="market_order_header">
+        <button type="button" class="times"><i class="fas fa-times" onclick="trades('Open',0);"></i></button>
+        <h4 class="title" id="order_form_scrip_id"></h4>
+    </div>
+    <div class="market_order_middle_cntnt">
+
+        <div class="market_order_tablinks">
+            
+
+            <div id="order" class="tabcontent2 show">
+                <div class="market_modal_cntnt">
+                    <div id='order_err'></div>
+                    <form id="order_form" name="order_form" action="javascript:void(0);">
+                        <div id="mini_mega" style="display: none;">
+                            <input type="radio" name="scrip_qty_type" id="mini" value="mini" /> Mini
+                            <input type="radio" name="scrip_qty_type" id="mega" value="mega" checked="" /> Mega
+                        </div>
+                        <ul>
+                            <li>
+                                <input type="hidden" name="order_id" id="order_id" value="" />
+                                <input type="hidden" name="order_type" id="order_type" value="limit_order" />
+                                <input type="hidden" name="order_scrip_id" id="order_scrip_id" value="" />
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <label id="quantity_lot">Lots</label>
+                                <input type="number" name="lot" id="lot">
+                            </li>
+                            <li>
+                                <label>Price</label>
+                                <input type="number" name="price" id="price">
+                            </li>
+                        </ul>
+                    </form>
+                    <div class="market_btns">
+                        <a href="javascript:void(0);" class="sell_btn red_bg" onclick="modify_order(1);" id="modify_sell_button">
+                            <span class="sell">Update Sell Order</span>
+                        </a>
+                        <a href="javascript:void(0);" class="sell_btn green_bg" onclick="modify_order(0);" id="modify_buy_button">
+                            <span class="sell">Update Buy Order</span>
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- start market order modal -->
+<div class="success_msg_modal" id="success_modal">
+	<div class="success_msg_cntnt">
+                <span id="order_image"></span>
+		<h3 class="title" id="order_success_title"></h3>
+		<p class="para" id="order_message"></p>
+		<a href="javascript:void(0);" class="green_bg ok_btn" id="order_modal_action" onclick="order_modal_hide()">OK</a>
+	</div>
+</div>

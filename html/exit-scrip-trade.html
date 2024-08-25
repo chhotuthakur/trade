@@ -1,0 +1,82 @@
+
+<div class="exit_trade_header">
+	<div class="icn">
+            <a href="javascript:void(0);" onclick="portfolio();"><i class="fas fa-angle-left"></i></a>
+	</div>
+	<div class="title">
+		<h3>Exit Trade</h3>
+	</div>
+</div>
+
+<div class="exit_trade_cntnt">
+	<div class="exit_trade_cntnt_top">
+		<h3 class="title" id="order_form_scrip_id"></h3>
+                <a href="javascript:void(0);" class="exit_buy_btn green_bg" id="exit_button">Exit <span id="exit_order_type"></span> in <span id="exit_profit_loss"></span></a>
+	</div>
+	
+	<div class="mxc_list portfolio_cntnt table_resonsive">
+			  	<table>
+					  <tbody>
+						  <tr>
+						    <td>
+						    	<div class="list_cntnt">
+                                                            <p class="chg">Bid : <span id="order_form_bid"></span> </p>
+						    		<p class="chg">Last: <span id="order_form_ltp"></span></p>
+						    		<p class="chg">High: <span id="order_form_high"></span></p>
+						    		<p class="chg">Open: <span id="order_form_open"></span></p>
+                                                                <p class="chg">Close: <span id="order_form_prev_close"></span></p>
+<!--						    		<p class="chg">Buyers: <span id="order_form_bid"></span></p>-->
+						    		<p class="chg">Volume: <span id="order_form_volume"></span></p>
+						    		<!--<p class="chg">Last Buy: <span id="order_form_bid"></span></p>-->
+						    		<p class="chg">Upper ckt: <span id="order_form_upper_circuit"></span></p>
+						    		<p class="chg">Atp: <span id="order_form_atp"></span></p>
+						    	</div>
+						    </td>
+						    <td>
+						    	<div class="list_cntnt">
+						    		<p class="chg">Ask : <span id="order_form_ask"></span> </p>
+						    		<p class="chg">Change: <span id="order_form_change"></span></p>
+						    		<p class="chg">Low: <span id="order_form_low"></span></p>
+						    		<p class="chg">Bid Qty: <span id="order_form_bid_qty"></span></p>
+						    		<p class="chg">Ask Qty: <span id="order_form_ask_qty"></span></p>
+                                                                <p class="chg">Last Traded Qty: <span id="order_form_ltq"></span></p>
+						    		<p class="chg">Open Interest: <span id="order_form_oi"></span></p>
+						    		<!--<p class="chg">Last Sell: <span id="order_form_bid"></span></p>
+						    		<p class="chg">Last Buy: <span id="order_form_bid"></span></p>-->
+						    		<p class="chg">Lower ckt: <span id="order_form_lower_circuit"></span></p>
+						    		<p class="chg">Lot Size: <span id="order_form_lot_size"></span></p>
+						    	</div>
+						    </td>
+						  </tr>
+						  
+						  
+					  </tbody>
+					</table>
+			  </div>
+</div>
+
+<!-- start success msg modal-->
+<!--<div class="success_msg_modal" id="success_modal">
+	<div class="success_msg_cntnt">
+		<img src="images/checked.gif">
+		<h3 class="title">Success</h3>
+		<p class="para">Sold 1 lots of <span>naturalgas_27sep2022</span>AT 666.6</p>
+		<a href="javascript:void(0);" class="green_bg ok_btn" onclick="success_modal_hide()">OK</a>
+	</div>
+</div>-->
+<!--<script type="text/javascript">
+	function success_modal(){
+		document.getElementById("success_modal").style.display = "flex";
+	}
+	function success_modal_hide(){
+		document.getElementById("success_modal").style.display = "none";	
+	}
+</script>-->
+<div class="success_msg_modal" id="success_modal">
+	<div class="success_msg_cntnt">
+                <span id="order_image"></span>
+		<h3 class="title" id="order_success_title"></h3>
+		<p class="para" id="order_message"></p>
+		<a href="javascript:void(0);" class="green_bg ok_btn" id="order_modal_action" onclick="order_modal_hide()">OK</a>
+	</div>
+</div>

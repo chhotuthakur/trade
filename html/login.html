@@ -1,0 +1,48 @@
+
+<div class="signup_main">
+	<div class="login_top">
+		<div class="logo_logo" id="logo">
+			<img src="img/logo.png">
+		</div>
+		<h1 id="app_name" class="light_grey_clr title"></h1>	
+	</div>
+	
+	<div class="signup_form">
+		<div class="form_group">
+			
+			<div class="signup_form2">
+                            <div id="err"></div>
+                            <form onsubmit="login_user();" action='javascript:void(0);' method="post">
+					<ul>
+						<li>
+							<div class="form_input_box">
+								<input type="text" name="username" id="username" placeholder="User Name" />
+								
+							</div>
+							<!-- <p class="error_red">Please Enter User Name</p> -->
+						</li>
+						<li>
+							<div class="form_input_box">
+								<input type="password" name="password" id="password" placeholder="Password" />
+								
+								
+							</div>
+							<!-- <p class="error_red">Please Enter Password</p> -->
+						</li>
+						<li>
+							<input type="submit" id="login_button" name="login" value="Log in" class="signup_btn">
+						</li>
+						
+					</ul>
+				</form>
+				<div class="signin_btn">
+					<p class="light_grey_clr para"><b class="light_grey_clr">No real money involved.</b> This is a Virtual Trading Application which has all the features to trade. <br><br> This Application is used for exchanging views on markets for individual students for training purpose only.</p>
+				</div>
+			</div><!--end sign up form-->
+		</div><!--end form group-->
+	</div>
+
+	<div class="any_ques" id="enquiry_form_button">
+		<p class="light_grey_clr">Got any questions? <a href="javascript:void(0);" onclick='contact_us_form();' class="light_grey_clr">Contact Us</a></p>
+	</div>
+</div>

@@ -1,0 +1,292 @@
+<div class="home_page_main_div">
+    <!-- start header -->
+    <div class="top_header">
+        <div class="header_loction_left">
+            <h2>Marketwatch</h2> 
+            <!--<a href="javascript:void(0);" onclick="new_subscribe();">Subscribe</a>-->
+<!--            <div class="down_arrow">
+                <i class="fas fa-arrow-down" id="home_arrow"  onclick="top_market_show();"></i>
+                <i class="fas fa-times" id="home_time"  onclick="top_market_hide();"></i>
+            </div>-->
+        </div>
+    </div>
+    <!-- end header -->
+<!--    <div class="market_show">
+        <div class="market_top_list">
+            <ul>
+                <li>
+                    <div class="top_list_cntnt">
+                        <p class="title">Spot_gold</p>
+                        <p class="list_num">1696.75</p>
+                        <p class="list_para">1691.45-1704.70</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="top_list_cntnt">
+                        <p class="title">Spot_gold</p>
+                        <p class="list_num">1696.75</p>
+                        <p class="list_para">1691.45-1704.70</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="top_list_cntnt">
+                        <p class="title">Spot_gold</p>
+                        <p class="list_num">1696.75</p>
+                        <p class="list_para">1691.45-1704.70</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="top_list_cntnt">
+                        <p class="title">Spot_gold</p>
+                        <p class="list_num">1696.75</p>
+                        <p class="list_para">1691.45-1704.70</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="top_list_cntnt">
+                        <p class="title">Spot_gold</p>
+                        <p class="list_num">1696.75</p>
+                        <p class="list_para">1691.45-1704.70</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>-->
+    <script type="text/javascript">
+        function top_market_show() {
+            let show_market = document.getElementsByClassName("market_show")[0];
+            show_market.classList.add("show_mar");
+            document.getElementById("home_arrow").style.display = "none";
+            document.getElementById("home_time").style.display = "block";
+
+        }
+        function top_market_hide() {
+            let show_market = document.getElementsByClassName("market_show")[0];
+            show_market.classList.remove("show_mar");
+            document.getElementById("home_arrow").style.display = "block";
+            document.getElementById("home_time").style.display = "none";
+
+        }
+
+    </script>
+    <div class="home_middle_cntnt">
+        <div class="future_btns">
+            <div class="tab">
+                <button id="tab_MCX" class="tablinks active" onclick="market_watch('MCX')">MCX Futures</button>
+                <button id="tab_NSE" class="tablinks" onclick="market_watch('NSE')">NSE Futures</button>
+                <button id="tab_ALL" class="tablinks" onclick="market_watch('ALL','Options')">Options</button>
+            </div>
+        </div>
+        <div class="future_cntnt">
+            <!-- Tab content -->
+            <div id="mcx" class="tabcontent show">
+                <div class="future_search">
+                    <input type="text" name="mcx_scrips" id="scrips_search_btn" placeholder="Search & Add" onclick="search_modal_show('Future');">
+                    <button type="button" class="search_btn" >
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button type="button" class="filter_btn">
+                        <i class="fas fa-filter" onclick="mcx_filter_show();"></i>
+                    </button>
+                </div>
+
+                <div class="mxc_list table_resonsive">
+                    <table>
+                        <tbody id="mcx_future_data">
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+<!--            <div id="nse" class="tabcontent show">
+
+                <div class="future_search">
+                    <input type="text" name="nse_scrips" placeholder="Search & Add" onclick="search_modal_show('NSE','Future');">
+                    <button type="button" class="search_btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button type="button" class="filter_btn">
+                        <i class="fas fa-filter" onclick="nse_filter_show();"></i>
+                    </button>
+                </div>
+
+                <div class="mxc_list table_resonsive">
+                    <table>
+                        <tbody id="nse_future_data">
+
+                        </tbody>
+                    </table>
+                </div>
+
+
+            </div>-->
+
+        </div>
+    </div>
+</div>
+
+<div class="last_space" id="last_space"></div>
+<!-- end last space -->
+
+<!-- start footer menu -->
+
+
+<!-- start mcx futures filter modal -->
+<div class="mcx_modal" id="mcx_modal">
+    <div class="mcx_header">
+        <h3>Mcx Sort</h3>
+        <div class="arrow_mcx">
+            <i class="fas fa-arrow-left" onclick="mcx_filter_hide();"></i>
+        </div>
+    </div>
+    <div class="mcx_modal_list">
+        <ul>
+<!--            <li>
+                <div class="lft_cntn">
+                    <p class="title">gold</p>
+                    <p class="para">05dec2022</p>
+                </div>
+                <div class="rgt_menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </li>
+            <li>
+                <div class="lft_cntn">
+                    <p class="title">gold</p>
+                    <p class="para">05dec2022</p>
+                </div>
+                <div class="rgt_menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </li>
+            <li>
+                <div class="lft_cntn">
+                    <p class="title">silver</p>
+                    <p class="para">05dec2022</p>
+                </div>
+                <div class="rgt_menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </li>-->
+        </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    function mcx_filter_show() {
+        let mcx_modal = document.getElementById("mcx_modal");
+        mcx_modal.style.display = "block";
+    }
+    function mcx_filter_hide() {
+        let mcx_modal = document.getElementById("mcx_modal");
+        mcx_modal.style.display = "none";
+    }
+</script>
+<!-- end mcx futures filter modal -->
+<!-- start nse futures filter modal -->
+<div class="mcx_modal" id="nse_modal">
+    <div class="mcx_header">
+        <h3>Nse Sort</h3>
+        <div class="arrow_mcx">
+            <i class="fas fa-arrow-left" onclick="nse_filter_hide();"></i>
+        </div>
+    </div>
+    <div class="mcx_modal_list">
+        <ul>
+<!--            <li>
+                <div class="lft_cntn">
+                    <p class="title">Finnifty</p>
+                    <p class="para">05dec2022</p>
+                </div>
+                <div class="rgt_menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </li>
+            <li>
+                <div class="lft_cntn">
+                    <p class="title">aartiind</p>
+                    <p class="para">05dec2022</p>
+                </div>
+                <div class="rgt_menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </li>
+            <li>
+                <div class="lft_cntn">
+                    <p class="title">abcapital</p>
+                    <p class="para">05dec2022</p>
+                </div>
+                <div class="rgt_menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </li>-->
+        </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    function nse_filter_show() {
+        let mcx_modal = document.getElementById("nse_modal");
+        mcx_modal.style.display = "block";
+    }
+    function nse_filter_hide() {
+        let mcx_modal = document.getElementById("nse_modal");
+        mcx_modal.style.display = "none";
+    }
+</script>
+<!-- end nse futures filter modal -->
+
+<!-- start mcx search modal-->
+<div class="mcx_search_modal" id="mcx_search">
+    <div class="mcx_search_header">
+        <div class="icn" onclick="search_modal_hide(); market_watch();"><i class="fas fa-chevron-left"></i></div>
+        <div class="mcx_search_input">
+            <input type="text" name="mcx_filter" id="mcx_filter" onkeyup="fetch_scrips('Future',this.value)" placeholder="Search & add">
+            <button type="button" class="clear_btn" onclick="clear_search('Future','mcx_filter')">Clear</button>
+        </div>
+    </div>
+
+    
+    <div class="mcx_search_middle_cntnt" >
+        <div class="mxc_list">
+            <table>
+                <tbody id="search_data">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+<script type="text/javascript">
+    function search_modal_show(trade_type) {
+        document.getElementById("mcx_search").classList.add("active");
+        document.getElementById("mcx_filter").focus();
+        fetch_scrips(trade_type);
+    }
+    function search_modal_hide() {
+        document.getElementById("mcx_search").classList.remove("active");
+    }
+</script>
+<!-- end mcx search modal -->
+
+<!-- start nse search modal-->
+<!--<div class="mcx_search_modal" id="nse_search">
+    <div class="mcx_search_header">
+        <div class="icn" onclick="nse_search_modal_hide();"><i class="fas fa-chevron-left"></i></div>
+        <div class="mcx_search_input">
+            <input type="text" name="nse_filter" placeholder="Search & add">
+            <button type="button" class="clear_btn">Clear</button>
+        </div>
+    </div>
+
+    <div class="mcx_search_middle_cntnt" >
+        <div class="mxc_list">
+            <table>
+                <tbody id="nse_search_data">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>-->

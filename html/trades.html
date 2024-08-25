@@ -1,0 +1,149 @@
+
+<div class="home_page_main_div">
+    <!-- start header -->
+    <div class="top_header">
+        <div class="header_loction_left">
+            <h2>Trades</h2>
+        </div>
+    </div>
+    <!-- end header -->
+    <div class="home_middle_cntnt">
+        <div class="future_btns">
+            <div class="tab">
+                <button id="pending_trades" class="tablinks active" onclick="trades('Open', 0)">Pending</button>
+                <button id="active_trades" class="tablinks" onclick="trades('Open', 1)">Active</button>
+                <button id="closed_trades" class="tablinks" onclick="trades('Closed', 1)">Closed</button>
+            </div>
+        </div>
+        <div class="future_cntnt">
+            <!-- Tab content -->
+<!--            <div id="pending" class="tabcontent show">
+                <div class="order_pending">
+                    <img src="img/rest-time.png">
+                    <h3>No Pending Order...</h3>
+                    <p>Place an order from watchlist</p>
+                </div>
+
+
+            </div>-->
+
+            <div id="active" class="tabcontent show">
+
+                <div class="trades_active_btns" id="active_trade_buttons" style="display:none;">
+                    <a href="javascript:void(0);" class="active_mcx" onclick="close_all_trades_form('MCX');">Close Active Trades MCX</a>
+                    <a href="javascript:void(0);" class="active_mcx" onclick="close_all_trades_form('NSE');">Close Active Trades Equity</a>
+                </div>
+
+                <div id="trades_list_wrapper" class="mxc_list portfolio_cntnt table_resonsive" onscroll="load_more_trades();"  style="height: 560px; overflow: auto;">
+                    <table>
+                        <tbody id="trades_list">
+                            
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+<!--            <div class="tabcontent show" id="closed">
+
+
+                <div class="mxc_list portfolio_cntnt table_resonsive">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="list_cntnt">
+                                        <p class="title">concor</p>
+                                        <p class="title">05DEC2022</p>
+                                        <p class="chg m-t-10">Sold by Trader <span class="red_clr light_red_bg">666.4</span></p>
+                                        <p class="title m-t-10">5th Sep, 12:40 <span class="green_clr light_green_bg">666.4</span></p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="list_cntnt">
+                                        <p class="chg"><span class="red_clr light_red_bg">-7.55 / -0.11</span> <span class="red_clr light_red_bg">QTY:1</span></p>
+                                        <p class="chg m-t-10">Bought By admin <span class="green_clr light_green_bg">666.4</span></p>
+                                        <p class="title m-t-10">5th Sep, 12:40 <span class="blue_clr light_blue_bg">CAR.FWD</span></p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="list_cntnt">
+                                        <p class="title">concor</p>
+                                        <p class="title">05DEC2022</p>
+                                        <p class="chg m-t-10">Sold by Trader <span class="red_clr light_red_bg">666.4</span></p>
+                                        <p class="title m-t-10">5th Sep, 12:40 <span class="green_clr light_green_bg">666.4</span></p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="list_cntnt">
+                                        <p class="chg"><span class="red_clr light_red_bg">-7.55 / -0.11</span> <span class="red_clr light_red_bg">QTY:1</span></p>
+                                        <p class="chg m-t-10">Bought By admin <span class="green_clr light_green_bg">666.4</span></p>
+                                        <p class="title m-t-10">5th Sep, 12:40 <span class="blue_clr light_blue_bg">CAR.FWD</span></p>
+                                    </div>
+                                </td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>-->
+
+        </div>
+
+<!--        <script type="text/javascript">
+            function trades_fun(evt, cityName) {
+                let i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(cityName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+        </script>-->
+    </div>
+
+    <div class="last_space" id="last_space"></div>
+    <!-- end last space -->
+</div>
+    <!-- start footer menu -->
+
+
+    <!-- start success msg modal-->
+    <div class="success_msg_modal" id="close_all_trades_modal">
+        <div class="success_msg_cntnt">
+            <p class="para">Please enter your password to close all active trades in <span id="trade_market_type_text"></span></p>
+            <div class="enter_password_form">
+                <div id="trade_password_message" style="color:red;"></div>
+                <form action="javascript:void(0);" onsubmit="close_all_trades()">
+                    <ul>
+                        <li>
+                            <label>Password</label>
+                            <input type="hidden" name="trade_market_type" id="trade_market_type" />
+                            <input type="password" name="trade_password" id="trade_password" placeholder="Enter Password">
+                        </li>
+                        <li>
+                            <button type="submit" class="green_bg">Submit</button>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+            <a href="javascript:void(0);" class="red_bg ok_btn" onclick="hide_close_all_trades_form()">Don't close my trades</a>
+        </div>
+    </div>
+<div class="success_msg_modal" id="success_modal">
+	<div class="success_msg_cntnt">
+                <span id="order_image"></span>
+		<h3 class="title" id="order_success_title"></h3>
+		<p class="para" id="order_message"></p>
+		<a href="javascript:void(0);" class="green_bg ok_btn" id="order_modal_action" onclick="order_modal_hide(); trades('Open',0)">OK</a>
+	</div>
+</div>
